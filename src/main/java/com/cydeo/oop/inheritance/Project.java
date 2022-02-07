@@ -11,6 +11,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
+// lombok does not have constructor to initilize Parent class
+// so I created custom constr to initilize BaseEntity variables
 @AllArgsConstructor
 @Getter
 @Setter
