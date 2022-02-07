@@ -5,8 +5,10 @@ package com.cydeo;
 import com.cydeo.core.Loops;
 import com.cydeo.core.Methods;
 import com.cydeo.core.SelectionStatements;
+import com.cydeo.oop.abstraction.service.UserService;
 import com.cydeo.oop.encapsulation.Role;
 import com.cydeo.oop.encapsulation.User;
+import com.cydeo.oop.inheritance.Project;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -35,7 +37,13 @@ public class Main {
         System.out.println(user.getLastName());
         System.out.println(user.getRole().getDescription());
 
-
+        //*******OOP-Inheritance*******//
+        Project project = new Project(1,LocalDateTime.now(),1,LocalDateTime.now().minusHours(5),1,"PRJ001", "Human Resource CRM",
+                new User("Mike","Smith",new Role(1,"Manager")),
+                LocalDate.now(),LocalDate.now().plusMonths(6),"IN_PROGRESS","HCRM Detail Information");
+        //*******OOP-Interface*******//
+        UserService userService = new UserService();
+        System.out.println(userService.userByFirstName("Mike").getLastName());
     }
 
 }
