@@ -10,7 +10,7 @@ public class CourseTest {
         Course selenium = new Selenium();
         selenium.study();
 
-        //**********************************//
+        //************DEPRECATED***********//
         Course java2 = new Course() {
             @Override
             public void study() {
@@ -27,7 +27,7 @@ public class CourseTest {
         };
         selenium2.study();
 
-        //**********************************//
+        //**********LAMBDA EXPR WORKS WITH FUNC INTERFACE *********//
         Course javaCourse = () -> System.out.println("Studying Java");
         javaCourse.study();
 
