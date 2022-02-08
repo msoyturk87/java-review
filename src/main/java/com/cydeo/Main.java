@@ -5,10 +5,13 @@ package com.cydeo;
 import com.cydeo.core.Loops;
 import com.cydeo.core.Methods;
 import com.cydeo.core.SelectionStatements;
+import com.cydeo.oop.abstraction.implementation.UserServiceImplementation;
 import com.cydeo.oop.abstraction.service.UserService;
 import com.cydeo.oop.encapsulation.Role;
 import com.cydeo.oop.encapsulation.User;
+import com.cydeo.oop.inheritance.BaseEntity;
 import com.cydeo.oop.inheritance.Project;
+import com.cydeo.oop.polymorphism.Employee;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -44,6 +47,23 @@ public class Main {
         //*******OOP-Interface*******//
         UserService userService = new UserService();
         System.out.println(userService.userByFirstName("Mike").getLastName());
+
+        //*******OOP-Polymorphism*******//
+        // Both works
+        // Tightly Coupled
+        Employee employee=new Employee();
+        // Losely Coupled
+        BaseEntity employee2=new Employee();
+        // left side interface right side is class
+        UserServiceImplementation userServiceImplementation=new UserService();
+
+
+        employee.getEmployeeHours();
+        // we need down casting
+        // reference type (left side) decides what is accessible
+        // object type is right side
+        // we need to down casting to handle issue
+        ((Employee)employee2).getEmployeeHours();
     }
 
 }
