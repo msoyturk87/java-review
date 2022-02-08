@@ -1,6 +1,7 @@
 package com.cydeo.oop.inheritance;
 
 
+import com.cydeo.enums.Status;
 import com.cydeo.oop.encapsulation.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,12 +24,12 @@ public class Project extends BaseEntity {
     private User assignedManager;
     private LocalDate startDate;
     private LocalDate endDate;
-    private String projectStatus;
+    private Status projectStatus;
     private String projectDetail;
 
     public Project(long id, LocalDateTime insertDateTime, long insertUserId, LocalDateTime lastUpdateDateTime,
                    long lastUpdateUserId, String projectCode, String projectName,
-                   User assignedManager, LocalDate startDate, LocalDate endDate, String projectStatus, String projectDetail) {
+                   User assignedManager, LocalDate startDate, LocalDate endDate, Status projectStatus, String projectDetail) {
         super(id, insertDateTime, insertUserId, lastUpdateDateTime, lastUpdateUserId);
         this.projectCode = projectCode;
         this.projectName = projectName;

@@ -1,6 +1,7 @@
 package com.cydeo.oop.encapsulation;
 
 
+import com.cydeo.enums.Gender;
 import com.cydeo.oop.inheritance.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,6 +18,7 @@ public class User extends BaseEntity {
     private String firstName;
     private String lastName;
     private Role role;
+    private Gender gender;
 
 
     public User(long id, LocalDateTime insertDateTime, long insertUserId, LocalDateTime lastUpdateDateTime, long lastUpdateUserId, String firstName, String lastName, Role role) {

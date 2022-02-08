@@ -5,6 +5,8 @@ package com.cydeo;
 import com.cydeo.core.Loops;
 import com.cydeo.core.Methods;
 import com.cydeo.core.SelectionStatements;
+import com.cydeo.enums.Gender;
+import com.cydeo.enums.Status;
 import com.cydeo.oop.abstraction.implementation.UserServiceImplementation;
 import com.cydeo.oop.abstraction.service.UserService;
 import com.cydeo.oop.encapsulation.Role;
@@ -35,15 +37,15 @@ public class Main {
         SelectionStatements.demoSwitchCaseStatement();
 
         //*******OOP-Encapsulation*******//
-        User user = new User("Mike","Smith",new Role(2,"Manager"));
+        User user = new User("Mike","Smith",new Role(2,"Manager"),Gender.MALE);
         System.out.println(user.getFirstName());
         System.out.println(user.getLastName());
         System.out.println(user.getRole().getDescription());
 
         //*******OOP-Inheritance*******//
         Project project = new Project(1,LocalDateTime.now(),1,LocalDateTime.now().minusHours(5),1,"PRJ001", "Human Resource CRM",
-                new User("Mike","Smith",new Role(1,"Manager")),
-                LocalDate.now(),LocalDate.now().plusMonths(6),"IN_PROGRESS","HCRM Detail Information");
+                new User("Mike","Smith",new Role(1,"Manager"),Gender.FEMALE),
+                LocalDate.now(),LocalDate.now().plusMonths(6),Status.IN_PROGRESS,"HCRM Detail Information");
         //*******OOP-Interface*******//
         UserService userService = new UserService();
         System.out.println(userService.userByFirstName("Mike").getLastName());
@@ -64,6 +66,13 @@ public class Main {
         // object type is right side
         // we need to down casting to handle issue
         ((Employee)employee2).getEmployeeHours();
+
+        //*******ENUM*******//
+        System.out.println(Gender.FEMALE);
+        System.out.println(Status.IN_PROGRESS);
+        // value as String
+        System.out.println(Status.IN_PROGRESS.getValue());
+
     }
 
 }
